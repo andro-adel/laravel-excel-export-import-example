@@ -65,5 +65,34 @@
             </div>
         </div>
     </div>
+
+    <div class="table-responsive">
+
+        <table class="table table-light table-striped table-hover">
+        <thead>
+            <th> # </th>
+            <th> image </th>
+            <th> Name </th>
+            <th> Email </th>
+        </thead>
+        <tbody>
+
+            @foreach ($users as $user)
+                <tr>
+                    <td> <a> {{  $user->id }} </a> </td>
+                    <td> <img class="img-thumbnail" src="{{  asset($user->image) }}"></td>
+                    <td> <a> {{  $user->name }} </a></td>
+                    <td> {{  $user->email }} </td>
+
+                </tr>
+            @endforeach
+        </tbody>
+     </table>
+
+
+
+    </div>
+
+
 </div>
 @endsection

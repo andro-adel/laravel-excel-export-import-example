@@ -3,13 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Imports\UsersImport;
+use App\User;
 use Illuminate\Http\Request;
 
 class UsersImportController extends Controller
 {
     public function show()
     {
-        return view('users.import');
+        $users = User::all();
+        return view('users.import' , [
+            'users' => $users
+        ]);
     }
 
     public function store(Request $request)

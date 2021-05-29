@@ -42,6 +42,7 @@ class UsersImport implements
             $user = User::create([
                 'name' => $row['name'],
                 'email' => $row['email'],
+                'image' => $row['image'],
                 'password' => Hash::make('password')
             ]);
 
