@@ -23,6 +23,7 @@ use Maatwebsite\Excel\Events\AfterImport;
 use Maatwebsite\Excel\Validators\Failure;
 use Throwable;
 
+
 class UsersImport implements
     ToCollection,
     WithHeadingRow,
@@ -39,6 +40,7 @@ class UsersImport implements
     public function collection(Collection $rows)
     {
         foreach ($rows as $row) {
+
             $user = User::create([
                 'name' => $row['name'],
                 'email' => $row['email'],
